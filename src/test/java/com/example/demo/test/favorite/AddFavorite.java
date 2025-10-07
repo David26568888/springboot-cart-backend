@@ -27,12 +27,18 @@ public class AddFavorite {
 		
 		//使用者
 		User john =userRepository.findById(1L).get();
-		User mary =userRepository.findById(2L).get();
+		User DAVID =userRepository.findById(5L).get();
 		
 		//加入關注
 		john.getFavoriteProducts().add(apple);
 		john.getFavoriteProducts().add(banana);
 		
-		mary.getFavoriteProducts().add(banana);
+		DAVID.getFavoriteProducts().add(banana);
+		
+		//保存
+		userRepository.save(john);
+		userRepository.save(DAVID);
+		
+		System.out.println("關注成功");
 	}
 }
