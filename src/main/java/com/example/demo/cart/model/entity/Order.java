@@ -31,7 +31,7 @@ public class Order {
 	// FetchType.Lazy 查找 order 的同時不會查找 orderItem
 	//	cascade 連動關係 (不論新增 修改 移除)
 	@OneToMany(mappedBy = "order",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	private List<OrderItem> orderItem;
+	private List<OrderItem> orderItems;
 	
 	@ManyToOne
 	@JoinColumn(name="user_id")
